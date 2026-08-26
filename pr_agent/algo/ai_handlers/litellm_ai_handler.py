@@ -936,7 +936,7 @@ class LiteLLMAIHandler(BaseAiHandler):
         api_base_value = kwargs.get("api_base")
         api_base = api_base_value.strip().lower() if isinstance(api_base_value, str) else ""
         force_streaming = (
-            bool(self.force_streaming_provider)
+            bool(custom_llm_provider)
             and custom_llm_provider == self.force_streaming_provider
             and bool(self.force_streaming_api_base_substrings)
             and any(substring in api_base for substring in self.force_streaming_api_base_substrings)
